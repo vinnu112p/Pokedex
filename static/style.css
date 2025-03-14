@@ -2,24 +2,38 @@ body {
     margin: 0;
     padding: 0;
     height: 100vh;
-    background: url('bg2.jpg') no-repeat center center fixed;
-    background-size: cover;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
     color: white;
-    font-family: Arial, sans-serif;
+    font-family: "Honk", system-ui;
+    position: relative;
+}
+
+.spline-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
 }
 
 .container {
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.2);
     padding: 20px;
     border-radius: 10px;
+    position: relative;
+    z-index: 2;
+    margin-top: 80px; /* Adjust to avoid overlap with iframe */
+    width: 90%;
+    max-width: 600px;
 }
 
 h1 {
-    font-size: 3em;
+    font-size: 2.5em;
     margin-bottom: 20px;
 }
 
@@ -32,9 +46,11 @@ input[type="text"] {
     font-size: 1em;
     border: 1px solid #ccc;
     border-radius: 5px;
+    width: 80%;
+    max-width: 300px;
 }
 
-button {
+/* button {
     padding: 10px;
     font-size: 1em;
     border: none;
@@ -47,7 +63,36 @@ button {
 
 button:hover {
     background-color: #0056b3;
+} */
+
+
+.btn-grad {background-image: linear-gradient(to right, #F09819 0%, #EDDE5D  51%, #F09819  100%)
 }
+
+.btn-grad {
+
+    padding: 10px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    margin-left: 5px;
+    border: 2px solid #f09819;
+   transition: 0.5s;
+   background-size: 200% auto;
+         
+   border-radius: 10px;
+ 
+ }
+
+ .btn-grad:hover {
+   background-position: right center; /* change the direction of the change here */
+   color: #fff;
+   text-decoration: none;
+ }
+
 
 .pokemon-details {
     margin-top: 20px;
@@ -60,11 +105,53 @@ button:hover {
 }
 
 .pokemon-details h2 {
-    font-size: 2em;
+    font-size: 2.5em;
     margin: 10px 0;
 }
 
 .pokemon-details p {
-    font-size: 1.2em;
+    font-size: 1.6em;
     margin: 5px 0;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 2px 0;
+    text-align: center;
+    font-size: 1.4em;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.footer a {
+    color: white;
+    transition: font-size 0.3s ease;
+}
+
+.footer a:hover {
+    font-size: 0.8em; /* Increase the font size on hover */
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    .pokemon-details h2 {
+        font-size: 1.5em;
+    }
+
+    .pokemon-details p {
+        font-size: 1em;
+    }
+
+    .footer {
+        font-size: 1em;
+    }
+
+    .footer a:hover {
+        font-size: 1.2em;
+    }
 }

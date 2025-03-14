@@ -5,13 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokedex</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Honk&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="spline-container">
+        <iframe src='https://my.spline.design/pikachudrinkingcoffee-a9b385a65bd2e7eda03f224d8d3c4aec/' frameborder='0' width='100%' height='100%'></iframe>
+    </div>
     <div class="container">
         <h1>Welcome to the Pokedex</h1>
         <form method="POST">
             <input type="text" name="pokemon_name" placeholder="Enter Pokemon name" required>
-            <button type="submit">Search</button>
+            <button class = "btn-grad" type="submit">Search</button>
+            
         </form>
         {% if pokemon %}
         <div class="pokemon-details">
@@ -23,6 +30,9 @@
             <p>Type: {{ pokemon.types | join(', ') }}</p>
         </div>
         {% endif %}
+    </div>
+    <div class="footer">
+        <p>Vinayak <a href="https://github.com/vinnu112p" target="blank">GitHub</a></p>
     </div>
 </body>
 </html>
