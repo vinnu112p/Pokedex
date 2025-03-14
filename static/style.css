@@ -154,4 +154,9 @@ button:hover {
     .footer a:hover {
         font-size: 1.2em;
     }
+
+    .btn-grad {
+        padding: 5px;
+        font-size: 0.8em;
+    }
 }
